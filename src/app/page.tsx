@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Play, Pause, Volume2, Instagram, Youtube, Facebook, Mail, Phone, MapPin, Users, Award, Mic, Camera, Music, Film, Image as ImageIcon, ExternalLink } from 'lucide-react';
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState('manifest');
+  const [activeSection] = useState('manifest');
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -134,14 +134,14 @@ export default function Home() {
               ))}
             </div>
             <div className="flex items-center space-x-4">
-              <a href="https://instagram.com/glasulice" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://instagram.com/studio_borba_015" className="text-muted-foreground hover:text-primary transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="https://youtube.com/@glasulice" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://youtube.com/@localpatriot" className="text-muted-foreground hover:text-primary transition-colors">
                 <Youtube size={20} />
               </a>
-              <a href="https://facebook.com/glasulice" className="text-muted-foreground hover:text-primary transition-colors">
-                <Facebook size={20} />
+              <a href="https://borba015.com" className="text-muted-foreground hover:text-primary transition-colors">
+                <ExternalLink size={20} />
               </a>
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function Home() {
               Nije brend. Nije trend. Nije ni samo umetnost.
             </p>
             <p className="text-xl md:text-2xl font-condensed mb-8 text-foreground leading-relaxed">
-              To je otpor. Istina. Edukacija kroz umetnost. Borba za bolje sutra kroz svest o posledicama.
+              To je otpor. Istina. Edukacija kroz umetnost. Jer stvarni život je mnogo važniji, i nije nam dodeljen da ga tek tako odbacimo.
             </p>
             <div className="grid md:grid-cols-3 gap-8 mt-12 mb-12">
               <div className="flex items-center justify-center space-x-3">
@@ -252,7 +252,7 @@ export default function Home() {
                   <h3 className="text-2xl font-montserrat font-bold text-primary">POKRET</h3>
                 </div>
                 <p className="font-condensed text-lg leading-relaxed text-muted-foreground">
-                  Glas ulice je pokret. Borba 015 je krv. Cinematic Realitat je naše ogledalo. Kroz izmišljene scenarije pokazujemo stvarnost.
+                  Glas ulice je pokret. Borba 015 je krv. Cinematic Realitat Area 015 je naše ogledalo. Kroz izmišljene scenarije pokazujemo stvarnost bez romantizovanja.
                 </p>
               </div>
               
@@ -264,7 +264,7 @@ export default function Home() {
                   <h3 className="text-2xl font-montserrat font-bold text-primary">EDUKACIJA</h3>
                 </div>
                 <p className="font-condensed text-lg leading-relaxed text-muted-foreground">
-                  Naš cilj je da odvratimo mlade od kriminalnih radnji kroz kreativno prikazivanje negativnih posledica. Promovisanje pozitivnih društvenih i moralnih vrednosti.
+                  Pokazujemo mladima mračne strane kriminalnog života i ODGOVARAMO na romantičnu sliku koju ponekad mediji prikazuju. Odvraćamo mlade od kriminalnih radnji kroz izmišljene scenarije.
                 </p>
               </div>
             </div>
@@ -515,13 +515,13 @@ export default function Home() {
                 </div>
                 <div className="absolute top-2 right-2 z-10">
                   <div className="bg-black/80 px-2 py-1 rounded text-xs font-condensed text-white">
-                    15+ Videos
+                    28 Videos
                   </div>
                 </div>
               </div>
               <h3 className="text-lg font-montserrat font-bold mb-2 text-primary">localpatriot Channel</h3>
               <p className="text-sm font-condensed text-muted-foreground mb-4">
-                CINEMATIC REALITAT AREA 015 - Izmišljeni scenariji za podizanje svesti o negativnim posledicama uličnog života.
+                281 pretplatnika, 28 videa, 26,685 pregleda. Izmišljeni scenariji za podizanje svesti o negativnim posledicama uličnog života.
               </p>
               <button 
                 className="btn-primary w-full text-sm"
@@ -543,13 +543,13 @@ export default function Home() {
                 </div>
                 <div className="absolute top-2 right-2 z-10">
                   <div className="bg-black/80 px-2 py-1 rounded text-xs font-condensed text-white">
-                    50+ Reels
+                    Studio Posts
                   </div>
                 </div>
               </div>
               <h3 className="text-lg font-montserrat font-bold mb-2 text-primary">BORBA 015 Studio</h3>
               <p className="text-sm font-condensed text-muted-foreground mb-4">
-                Muzička i audio/video produkcija iz Loznice - borba za ideje i bolji život kroz umetnost.
+                Srpski muzički label i audio/video produkcijski studio iz Loznice. Borba za ideje, promene i bolji život.
               </p>
               <div className="flex gap-2">
                 <button 
@@ -651,7 +651,7 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-montserrat font-bold mb-2 text-primary">Loznica Realitat: Posledice Izbora</h4>
                 <p className="text-sm font-condensed text-muted-foreground mb-4">
-                  Najnoviji edukativni sadržaj sa localpatriot kanala - autentične priče iz Loznice koje pokazuju realnost.
+                  Stvarni YouTube kanal sa 28 videa i 26,685 pregleda - edukativni sadržaj koji pokazuje negativne posledice kriminalnog života.
                 </p>
                 <button 
                   className="btn-primary w-full"
@@ -680,7 +680,7 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-montserrat font-bold mb-2 text-primary">Studio Sessions: Beat Making</h4>
                 <p className="text-sm font-condensed text-muted-foreground mb-4">
-                  Ekskluzivni pogled u BORBA 015 studio - proces nastanka hip-hop bitova koji definišu zvuk ulice.
+                  Stvarni studio iz Loznice - audio/video produkcija, intervjuisan na podkastu &quot;Kod Svete&quot; o lokalnoj hip-hop sceni.
                 </p>
                 <button 
                   className="btn-primary w-full"
@@ -784,7 +784,7 @@ export default function Home() {
             <h2 className="text-5xl md:text-7xl font-montserrat font-black mb-6">KONTAKT</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-red-700 mx-auto mb-4" />
             <p className="text-lg font-condensed text-muted-foreground max-w-2xl mx-auto">
-              Za brendove i pojedince koji ne beže od istine. Kolaboracije koje menjaju svet.
+              Budite kritični prema prikazanom sadržaju i razumite da on predstavlja IZMIŠLJENU PERSPEKTIVU. Kontakt za saradnju.
             </p>
           </div>
           
@@ -843,7 +843,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-lg font-montserrat font-bold">Email</h4>
-                    <p className="font-mono-custom text-muted-foreground">borba015@glasulice.com</p>
+                    <p className="font-mono-custom text-muted-foreground">locpathriot@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -851,11 +851,24 @@ export default function Home() {
               <div className="card-enhanced">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary to-red-700 rounded-lg flex items-center justify-center mr-4">
-                    <Phone className="text-white" size={24} />
+                    <ExternalLink className="text-white" size={24} />
                   </div>
                   <div>
-                    <h4 className="text-lg font-montserrat font-bold">Telefon</h4>
-                    <p className="font-mono-custom text-muted-foreground">+381 15 123 456</p>
+                    <h4 className="text-lg font-montserrat font-bold">Website</h4>
+                    <p className="font-mono-custom text-muted-foreground">borba015.com</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="card-enhanced">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-red-700 rounded-lg flex items-center justify-center mr-4">
+                    <Users className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-montserrat font-bold">Studio</h4>
+                    <p className="font-mono-custom text-muted-foreground">Mihailo Šojić</p>
+                    <p className="font-mono-custom text-xs text-muted-foreground">Podcast &quot;Kod Svete&quot;</p>
                   </div>
                 </div>
               </div>
@@ -907,19 +920,21 @@ export default function Home() {
                   <div className="text-xs text-muted-foreground font-condensed">BORBA 015 × CINEMATIC REALITAT</div>
                 </div>
               </div>
-              <p className="font-condensed text-muted-foreground leading-relaxed mb-6 max-w-md">
-                Underground kolektiv iz Zrenjanina. Borimo se kroz muziku, film i fotografiju. 
-                Naš glas je glas ulice - sirove istine bez kompromisa.
+              <p className="font-condensed text-sm text-muted-foreground leading-relaxed">
+                Underground kolektiv iz Loznice. BORBA 015 × CINEMATIC REALITAT AREA 015. Borba za ideje, promene i bolji život kroz umetnost.
+              </p>
+              <p className="font-condensed text-sm text-muted-foreground leading-relaxed">
+                Naš cilj je da pokažemo mladima mračne strane kriminalnog života i ODGOVORIMO na romantičnu sliku koju ponekad mediji prikazuju.
               </p>
               <div className="flex space-x-4">
-                <a href="https://instagram.com/glasulice" className="p-2 bg-muted rounded-lg hover:bg-primary hover:text-white transition-colors">
+                <a href="https://instagram.com/studio_borba_015" className="p-2 bg-muted rounded-lg hover:bg-primary hover:text-white transition-colors">
                   <Instagram size={20} />
                 </a>
-                <a href="https://youtube.com/@glasulice" className="p-2 bg-muted rounded-lg hover:bg-primary hover:text-white transition-colors">
+                <a href="https://youtube.com/@localpatriot" className="p-2 bg-muted rounded-lg hover:bg-primary hover:text-white transition-colors">
                   <Youtube size={20} />
                 </a>
-                <a href="https://facebook.com/glasulice" className="p-2 bg-muted rounded-lg hover:bg-primary hover:text-white transition-colors">
-                  <Facebook size={20} />
+                <a href="https://borba015.com" className="p-2 bg-muted rounded-lg hover:bg-primary hover:text-white transition-colors">
+                  <ExternalLink size={20} />
                 </a>
               </div>
             </div>
