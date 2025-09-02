@@ -279,7 +279,7 @@ export default function Home() {
             <h2 className="text-5xl md:text-7xl font-montserrat font-black mb-6">O NAMA</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-red-700 mx-auto mb-4" />
             <p className="text-lg font-condensed text-muted-foreground max-w-2xl mx-auto">
-              Kolektiv umetnika, boraca i glasnika istine iz Zrenjanina.
+              Kolektiv umetnika, boraca i glasnika istine iz Loznice.
             </p>
           </div>
           
@@ -965,7 +965,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-center space-x-2">
                   <MapPin size={16} />
-                  <span>Zrenjanin, Srbija</span>
+                  <span>Loznica, Srbija</span>
                 </li>
               </ul>
             </div>
