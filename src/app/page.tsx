@@ -1,13 +1,18 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Play, Pause, Volume2, Instagram, Youtube, Facebook, Mail, Phone, MapPin, Users, Award, Mic, Camera, Music, Film, Image as ImageIcon, ExternalLink } from 'lucide-react';
+import { Instagram, Youtube, Facebook, Mail, Phone, MapPin, Users, Award, Mic, Camera, Music, Film, Image as ImageIcon, ExternalLink } from 'lucide-react';
+import dynamic from 'next/dynamic';
+
+// Dynamically import the RadioPlayer component with no SSR
+const RadioPlayer = dynamic(() => import('@/components/RadioPlayer'), {
+  ssr: false,
+  loading: () => <div className="p-4 bg-gray-100 rounded-lg">Loading radio player...</div>
+});
 
 export default function Home() {
   const [activeSection] = useState('manifest');
   const [isScrolled, setIsScrolled] = useState(false);
-  const [currentTrack, setCurrentTrack] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -148,14 +153,11 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative vhs-effect">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
-        <div className="relative z-10 text-center px-6">
-          <div className="mb-8">
-            <h1 className="glitch text-6xl md:text-8xl mb-4 font-montserrat font-black">
-              GLAS ULICE
-            </h1>
+      <main className="min-h-screen bg-white">
+        {/* Radio Player Section */}
+        <section className="bg-gray-100 py-8">
+          <div className="container mx-auto px-4">
+            <RadioPlayer />
             <div className="text-primary font-mono-custom text-sm tracking-widest mb-8">
               BORBA 015 × CINEMATIC REALITAT AREA 015
             </div>
@@ -680,7 +682,7 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-montserrat font-bold mb-2 text-primary">Studio Sessions: Beat Making</h4>
                 <p className="text-sm font-condensed text-muted-foreground mb-4">
-                  Stvarni studio iz Loznice - audio/video produkcija, intervjuisan na podkastu &quot;Kod Svete&quot; o lokalnoj hip-hop sceni.
+                  Stvarni studio iz Loznice - audio/video produkcija, intervjuisan na podkastu &quot;Sloga Centar&quot; o lokalnoj hip-hop sceni.
                 </p>
                 <button 
                   className="btn-primary w-full"
@@ -868,7 +870,7 @@ export default function Home() {
                   <div>
                     <h4 className="text-lg font-montserrat font-bold">Studio</h4>
                     <p className="font-mono-custom text-muted-foreground">Mihailo Šojić</p>
-                    <p className="font-mono-custom text-xs text-muted-foreground">Podcast &quot;Kod Svete&quot;</p>
+                    <p className="font-mono-custom text-xs text-muted-foreground">Podcast &quot;Sloga Centar&quot;</p>
                   </div>
                 </div>
               </div>
