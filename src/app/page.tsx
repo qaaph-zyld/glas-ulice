@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Instagram, Youtube, Facebook, Mail, Phone, MapPin, Users, Award, Mic, Camera, Music, Film, Image as ImageIcon, ExternalLink } from 'lucide-react';
+import { Instagram, Youtube, Facebook, Mail, Phone, MapPin, Users, Award, Mic, Camera, Music, Film, Image as ImageIcon, ExternalLink, Play, Pause, Volume2 } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
 // Dynamically import the RadioPlayer component with no SSR
@@ -13,6 +13,8 @@ const RadioPlayer = dynamic(() => import('@/components/RadioPlayer'), {
 export default function Home() {
   const [activeSection] = useState('manifest');
   const [isScrolled, setIsScrolled] = useState(false);
+  const [currentTrack, setCurrentTrack] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -204,7 +206,6 @@ export default function Home() {
               Gledaj Realitat
             </button>
           </div>
-        </div>
       </section>
 
       {/* Manifest Section */}
@@ -906,6 +907,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      </main>
 
       {/* Footer */}
       <footer className="py-16 px-6 border-t border-border bg-background">
