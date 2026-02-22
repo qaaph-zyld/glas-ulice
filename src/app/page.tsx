@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Instagram, Youtube, Facebook, Mail, Phone, MapPin, Users, Award, Mic, Camera, Music, Film, Image as ImageIcon, ExternalLink, Play, Pause, Volume2 } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import HomeRedesign from '@/components/HomeRedesign';
 
 // Dynamically import the RadioPlayer component with no SSR
 const RadioPlayer = dynamic(() => import('@/components/RadioPlayer'), {
@@ -11,7 +12,12 @@ const RadioPlayer = dynamic(() => import('@/components/RadioPlayer'), {
 });
 
 export default function Home() {
-  const [activeSection] = useState('manifest');
+  const useFrontendRedo = process.env.NEXT_PUBLIC_FRONTEND_REDO !== 'false';
+
+  return useFrontendRedo ? <HomeRedesign /> : <LegacyHome />;
+}
+
+function LegacyHome() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);

@@ -1,64 +1,131 @@
 .radio-player-container {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     max-width: 100%;
-    margin: 20px auto;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 .radio-player {
-    background: #2d2d2d;
-    border-radius: 12px;
-    padding: 20px;
-    color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    padding: 18px;
+    color: #f4f6fb;
+    border: 1px solid rgba(157, 171, 194, 0.2);
+    background:
+      radial-gradient(circle at 8% 6%, rgba(255, 92, 53, 0.25), transparent 42%),
+      linear-gradient(165deg, rgba(20, 28, 44, 0.95), rgba(8, 11, 18, 0.95));
+    box-shadow: 0 14px 24px rgba(3, 5, 10, 0.45);
+}
+
+.radio-player::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 92, 53, 0.68), transparent);
+}
+
+.radio-player__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 12px;
 }
 
 .radio-player h3 {
-    margin: 0 0 15px 0;
-    color: #fff;
-    font-size: 1.4em;
+    margin: 0;
+    color: #fff4ef;
+    font-size: 1rem;
+    letter-spacing: 0.09em;
+}
+
+.radio-player__live-pill {
+    border-radius: 999px;
+    border: 1px solid rgba(255, 92, 53, 0.45);
+    padding: 3px 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #ffd8cd;
+    background: rgba(255, 92, 53, 0.14);
 }
 
 .now-playing {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
-    font-size: 0.95em;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 0.85rem;
 }
 
 .status {
-    background: #ff4d4d;
-    color: white;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    margin-right: 10px;
-    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 999px;
+    border: 1px solid rgba(157, 171, 194, 0.25);
+    padding: 3px 9px;
+    color: #d5deed;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(16, 21, 34, 0.72);
+}
+
+.status__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #7d8798;
+}
+
+.status--active {
+    border-color: rgba(255, 92, 53, 0.5);
+    color: #ffe4db;
+}
+
+.status--active .status__dot {
+    background: #ff5c35;
+    box-shadow: 0 0 0 3px rgba(255, 92, 53, 0.25);
+}
+
+.track-info {
+    color: #b7c2d5;
+    font-size: 0.8rem;
 }
 
 .player-controls {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .control-btn {
-    background: #4CAF50;
-    border: none;
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 16px;
+    border: 1px solid rgba(255, 92, 53, 0.5);
+    background: linear-gradient(140deg, rgba(255, 92, 53, 0.9), rgba(241, 70, 104, 0.9));
+    color: #140d0a;
+    width: 68px;
+    height: 34px;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-family: 'IBM Plex Mono', monospace;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s;
+    transition: 180ms ease;
 }
 
 .control-btn:hover {
-    background: #45a049;
+    transform: translateY(-1px);
+    filter: saturate(1.08);
 }
 
 .volume-control {
@@ -68,37 +135,68 @@
     flex-grow: 1;
 }
 
+.volume-control label {
+    font-size: 0.66rem;
+    color: #d7e0ee;
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
 .volume-control input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
-    height: 4px;
+    height: 5px;
     border-radius: 2px;
-    background: #555;
+    background: linear-gradient(90deg, rgba(255, 92, 53, 0.45), rgba(157, 171, 194, 0.4));
     outline: none;
 }
 
 .volume-control input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
-    background: #4CAF50;
+    background: #ff5c35;
+    border: 2px solid #fff4ef;
     cursor: pointer;
+}
+
+.volume-control input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ff5c35;
+    border: 2px solid #fff4ef;
+    cursor: pointer;
+}
+
+.radio-player__hint {
+    margin: 10px 0 0;
+    font-size: 0.7rem;
+    color: #f4baaa;
+    font-family: 'IBM Plex Mono', monospace;
 }
 
 /* Responsive Design */
 @media (max-width: 480px) {
     .radio-player {
-        padding: 15px;
+        padding: 14px;
     }
-    
+
     .player-controls {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        gap: 10px;
     }
-    
+
     .volume-control {
         width: 100%;
+    }
+
+    .now-playing {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
